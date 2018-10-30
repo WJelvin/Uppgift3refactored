@@ -81,34 +81,45 @@ public class Board {
 
 
     public void tryToSwitch(String valueOnButton) {
-        int value = Integer.parseInt(valueOnButton);
-        for (int x = 0; x < board.length; x++) {
-            for (int y = 0; y < board[x].length; y++) {
-                if (getValue(x, y) == value) {
-                    //check up
-                    if (getValue(x, y - 1) == numberOfTiles) {
-                        System.out.println("found empty on up");
-                        checkUp(x, y);
-                    }
-                    //check down
-                    if (getValue(x, y + 1) == numberOfTiles) {
-                        System.out.println("found empty on down");
-                        checkDown(x, y);
-                    }
-                    //check left
-                    if (getValue(x - 1, y) == numberOfTiles) {
-                        System.out.println("found empty on left");
-                        checkLeft(x, y);
-                    }
-                    //check right
-                    if (getValue(x + 1, y) == numberOfTiles) {
-                        System.out.println("found empty on right");
-                        checkRight(x, y);
+        if (!valueOnButton.equals("")) {
+            int value = Integer.parseInt(valueOnButton);
+            boolean done = false;
+            for (int x = 0; x < board.length; x++) {
+                if (done)
+                    break;
+                for (int y = 0; y < board[x].length; y++) {
+                    if (getValue(x, y) == value) {
+                        if (getValue(x, y - 1) == numberOfTiles) {
+                            //check up
+                            System.out.println("found empty on up");
+                            checkUp(x, y);
+                            done = true;
+                            break;
+                        } else if (getValue(x, y + 1) == numberOfTiles) {
+                            //check down
+                            System.out.println("found empty on down");
+                            checkDown(x, y);
+                            done = true;
+                            break;
+                        } else if (getValue(x - 1, y) == numberOfTiles) {
+                            //check left
+                            System.out.println("found empty on left");
+                            checkLeft(x, y);
+                            done = true;
+                            break;
+                        } else if (getValue(x + 1, y) == numberOfTiles) {
+                            //check right
+                            System.out.println("found empty on right");
+                            checkRight(x, y);
+                            done = true;
+                            break;
+                        }
                     }
                 }
             }
         }
     }
+
 
     public void checkUp(int x, int y) {
         if (board[x][y - 1] == numberOfTiles) {
