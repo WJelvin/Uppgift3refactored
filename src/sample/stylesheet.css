@@ -1,0 +1,62 @@
+#winText {
+    -fx-font-size: 100px;
+    -fx-text-fill: black;
+    -tx-text-weight: bold;
+    -fx-background: rgba(30,30,30);
+    -fx-rotate: -45;
+    
+}
+
+#newGameButton {
+    -fx-background-color: #c0d0c0;
+    -fx-text-fill: #222222;
+    -fx-font-size: 35px;
+}
+
+#newGameButton:hover {
+    -fx-background-color: #c4d6c6;
+    -fx-text-fill: #222222;
+    -fx-border-color: #a5a5a5;
+    -fx-border-width: 2px;
+}
+
+#newGameButton:pressed {
+    -fx-background-color: #a5b5a5;
+    -fx-border-color: #b0c0b0;
+    -fx-border-width: 3px;
+    -fx-text-fill: #efefef;
+}
+
+Tooltip, winText {
+    -fx-background: rgba(30,30,30);
+    -fx-text-fill: white;
+    -fx-background-color: rgba(30,30,30,0.8);
+    -fx-background-radius: 6px;
+    -fx-background-insets: 0;
+    -fx-padding: 0.667em 0.75em 0.667em 0.75em; /* 10px */
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.5) , 10, 0.0 , 0 , 3 );
+    -fx-font-size: 0.85em;
+}
+
+GridPane, Tile {
+    -fx-background-color: #fafafa;
+}
+
+Tile {
+    -fx-background-color: #e5e5e5;
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-border-padding: 2px;
+    -fx-text-fill: #333333;
+    -fx-border-radius: 5;
+    -fx-font-size: 20pt;
+}
+
+Tile:hover {
+    -fx-background-color: #e2e2e2;
+    -fx-text-fill: #000000;
+    -fx-border-width: 2;
+    -fx-border-insets: 1;
+    -fx-border-color: #ababab;
+    -fx-font-size: 28pt;
+}
